@@ -14,6 +14,6 @@ public class InvoiceTester {
                 invoice.getPartDescription(),
                 invoice.getItemQuantity(),
                 invoice.getItemPrice());
-        System.out.printf("Total invoice amount: $%.2f",invoice.getInvoiceAmount());
+        System.out.printf("Total invoice amount: $%.2f", invoice.getInvoiceAmount());
     }
 }
