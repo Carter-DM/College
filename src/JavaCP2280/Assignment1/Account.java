@@ -26,29 +26,27 @@ public class Account {
          * <p>Adds money to balance.</p>
          * @param amount
          */
-        if (amount > 0){
+        if (amount > 0) {
             balance += amount;
-        }
-        else{
+        } else {
             System.out.println("Cannot credit a negative amount.");
         }
     }
 
     public void debit(double amount) {
         /**
-         * Debit method.
+         * Debit method
          * <p>Withdraws money from balance.</p>
          * @param amount
          */
         if ((amount > balance) && (amount > 0)) {
             System.out.println("Debit amount exceeded account balance.");
-        }
-        else {
+        } else {
             balance -= amount;
         }
     }
 
-    public void reset(){
+    public void reset() {
         /**
          * Reset method.
          * <p>Resets account balance to 0.</p>
@@ -58,7 +56,7 @@ public class Account {
 
     public double getBalance() {
         /**
-         * Get Balance method
+         * getBalance
          * @return balance
          */
         return balance;
@@ -66,7 +64,7 @@ public class Account {
 
     public void setBalance(double balance) {
         /**
-         * Set Balance method
+         * setBalance
          * @param balance
          */
         this.balance = balance;

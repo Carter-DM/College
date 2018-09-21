@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Simple tester for Account Class
  */
-public class AccountTest {
+public class AccountTester {
 
     public static void main(String[] args) {
         //Set up the scanner from the console
