@@ -11,68 +11,81 @@ public class Employee {
     private String lastName;
     private double monthlySalary;
 
+    /**
+     * Constructor
+     *
+     * @param firstName
+     * @param lastName
+     * @param monthlySalary
+     */
     public Employee(String firstName, String lastName, double monthlySalary) {
-        /**
-         * Constructor
-         *
-         * @param firstName
-         * @param lastName
-         * @param monthlySalary
-         */
+
         this.firstName = firstName;
         this.lastName = lastName;
         if (monthlySalary < 0) {
-            throw new IllegalArgumentException("Monthly salary must be positive.");
+            System.out.println("Employee salary must be positive.");
         } else {
             this.monthlySalary = monthlySalary;
         }
     }
 
+    /**
+     * getFirstName
+     *
+     * @return firstName
+     */
     public String getFirstName() {
-        /**
-         * getFirstName
-         * @return firstName
-         */
+
         return firstName;
     }
 
+    /**
+     * setFirstName
+     *
+     * @param firstName
+     */
     public void setFirstName(String firstName) {
-        /**
-         * setFirstName
-         * @param firstName
-         */
+
         this.firstName = firstName;
     }
 
+    /**
+     * getLastName
+     *
+     * @return lastName
+     */
     public String getLastName() {
-        /**
-         * getLastName
-         * @return lastName
-         */
+
         return lastName;
     }
 
+    /**
+     * setLastName
+     *
+     * @param lastName
+     */
     public void setLastName(String lastName) {
-        /**
-         * setLastName
-         * @param lastName
-         */
+
         this.lastName = lastName;
     }
 
+    /**
+     * getMonthlySalary
+     *
+     * @return monthlySalary
+     */
     public double getMonthlySalary() {
-        /**
-         * getMonthlySalary
-         * @return monthlySalary
-         */
+
         return monthlySalary;
     }
 
+    /**
+     * setMonthlySalary
+     *
+     * @param monthlySalary
+     */
     public void setMonthlySalary(double monthlySalary) {
-        /**
-         * setMonthlySalary
-         * @param monthlySalary
-         */
+
         this.monthlySalary = monthlySalary;
     }
 

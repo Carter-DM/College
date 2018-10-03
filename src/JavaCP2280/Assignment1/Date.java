@@ -11,71 +11,86 @@ public class Date {
     private int day;
     private int year;
 
+    /**
+     * Constructor
+     *
+     * @param month
+     * @param day
+     * @param year
+     */
     public Date(int month, int day, int year) {
-        /**
-         * Constructor
-         *
-         * @param month
-         * @param day
-         * @param year
-         */
+
         this.month = month;
         this.day = day;
         this.year = year;
     }
 
-    public void displayDate(){
-        /**
-         * displayDate
-         * <p>Display the date in a m/d/y format.</p>
-         */
-        System.out.printf("%s/%s/%s",month, day, year);
+    /**
+     * displayDate
+     * <p>Display the date in a m/d/y format.</p>
+     */
+    public void displayDate() {
+
+        System.out.printf("%s/%s/%s", month, day, year);
     }
+
+    /**
+     * getMonth
+     *
+     * @return month
+     */
     public int getMonth() {
-        /**
-         * getMonth
-         * @return month
-         */
+
         return month;
     }
 
+    /**
+     * setMonth
+     *
+     * @param month
+     */
     public void setMonth(int month) {
-        /**
-         * setMonth
-         * @param month
-         */
+
         this.month = month;
     }
 
+    /**
+     * getDay
+     *
+     * @return day
+     */
     public int getDay() {
-        /**
-         * getDay
-         * @return day
-         */
+
         return day;
     }
 
+    /**
+     * setDay
+     *
+     * @param day
+     */
     public void setDay(int day) {
-        /**
-         * setDay
-         * @param day
-         */
+
         this.day = day;
     }
 
+    /**
+     * getYear
+     *
+     * @return year
+     */
     public int getYear() {
-        /**
-         * getYear
-         * @return year
-         */
+
         return year;
     }
 
+    /**
+     * setYear
+     *
+     * @param year
+     */
     public void setYear(int year) {
-        /**
-         * setYear
-         * @param year
-         */
+
         this.year = year;
     }
 

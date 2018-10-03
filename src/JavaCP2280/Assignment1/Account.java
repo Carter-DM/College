@@ -10,22 +10,26 @@ public class Account {
 
     private double balance;
 
+    /**
+     * Constructor
+     *
+     * @param balance
+     */
     public Account(double balance) {
-        /**
-         * Constructor
-         * @param initialBalance
-         */
+
         if (balance > 0.0) {
             this.balance = balance;
         }
     }
 
+    /**
+     * Credit method.
+     * <p>Adds money to balance.</p>
+     *
+     * @param amount
+     */
     public void credit(double amount) {
-        /**
-         * Credit method.
-         * <p>Adds money to balance.</p>
-         * @param amount
-         */
+
         if (amount > 0) {
             balance += amount;
         } else {
@@ -33,40 +37,43 @@ public class Account {
         }
     }
 
+    /**
+     * Debit method
+     * <p>Withdraws money from balance.</p>
+     *
+     * @param amount
+     */
     public void debit(double amount) {
-        /**
-         * Debit method
-         * <p>Withdraws money from balance.</p>
-         * @param amount
-         */
-        if ((amount > balance) && (amount > 0)) {
-            System.out.println("Debit amount exceeded account balance.");
+        if ((amount > balance) || (amount < 0)) {
+            System.out.println("Invalid debit.");
         } else {
             balance -= amount;
         }
     }
 
+    /**
+     * Reset method.
+     * <p>Resets account balance to 0.</p>
+     */
     public void reset() {
-        /**
-         * Reset method.
-         * <p>Resets account balance to 0.</p>
-         */
         this.balance = 0;
     }
 
+    /**
+     * getBalance
+     *
+     * @return balance
+     */
     public double getBalance() {
-        /**
-         * getBalance
-         * @return balance
-         */
         return balance;
     }
 
+    /**
+     * setBalance
+     *
+     * @param balance
+     */
     public void setBalance(double balance) {
-        /**
-         * setBalance
-         * @param balance
-         */
         this.balance = balance;
     }
 

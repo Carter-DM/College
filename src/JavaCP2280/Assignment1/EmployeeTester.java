@@ -21,14 +21,14 @@ public class EmployeeTester {
 
     }
 
+    /**
+     * printYearlySalary
+     * <p>Prints yearly salary of both tester employees</p>
+     *
+     * @param employee
+     * @param employee2
+     */
     private static void printYearlySalary(Employee employee, Employee employee2) {
-        /**
-         * printYearlySalary
-         * <p>Prints yearly salary of both tester employees</p>
-         *
-         * @param employee
-         * @param employee2
-         */
         System.out.printf("Yearly salary for %s %s: $%.2f\nYearly salary for %s %s: $%.2f\n",
                 employee.getFirstName(),
                 employee.getLastName(),
