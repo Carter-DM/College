@@ -1,4 +1,4 @@
-package JavaCP2280.Assignment1;
+package javacp2280.assignment1;
 
 /**
  * Employee class

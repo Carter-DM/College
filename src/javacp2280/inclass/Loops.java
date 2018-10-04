@@ -1,4 +1,4 @@
-package JavaCP2280.InClass;
+package javacp2280.inclass;
 
 import java.util.Random;
 
