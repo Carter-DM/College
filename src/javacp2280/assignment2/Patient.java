@@ -1,6 +1,5 @@
 package javacp2280.assignment2;
 
-import java.time.LocalDate;
 import java.util.Date;
 
 /**
