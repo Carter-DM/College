@@ -1,6 +1,7 @@
 package javacp2280.assignment2;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.Period;
 
 /**
  * Patient class
@@ -18,11 +19,11 @@ public class Patient {
     /**
      * Patient Constructor
      *
-     * @param fName First name of patient
-     * @param lName Last name of patient
-     * @param dobDay Day of birth
+     * @param fName    First name of patient
+     * @param lName    Last name of patient
+     * @param dobDay   Day of birth
      * @param dobMonth Month of birth
-     * @param dobYear Year of birth
+     * @param dobYear  Year of birth
      */
     public Patient(String fName, String lName, int dobDay, int dobMonth, int dobYear) {
         this.fName = fName;
@@ -30,19 +31,22 @@ public class Patient {
         this.dobDay = dobDay;
         this.dobMonth = dobMonth;
         this.dobYear = dobYear;
+
     }
 
     /**
      * Get age in years
+     *
      * @return
      */
-    public int getAgeInYears(){
-        Date today = new Date();
-        return today.getYear() - dobYear;
+    public int getAgeInYears() {
+        LocalDate birthday = LocalDate.of(dobYear, dobMonth, dobDay);
+        return (Period.between(birthday, LocalDate.now())).getYears();
     }
 
     /**
      * Get first name
+     *
      * @return
      */
     public String getfName() {
@@ -51,6 +55,7 @@ public class Patient {
 
     /**
      * Set first name
+     *
      * @param fName
      */
     public void setfName(String fName) {
@@ -59,6 +64,7 @@ public class Patient {
 
     /**
      * Get last name
+     *
      * @return
      */
     public String getlName() {
@@ -67,6 +73,7 @@ public class Patient {
 
     /**
      * Set last name
+     *
      * @param lName
      */
     public void setlName(String lName) {
@@ -75,6 +82,7 @@ public class Patient {
 
     /**
      * Get day of birth
+     *
      * @return
      */
     public int getDobDay() {
@@ -83,6 +91,7 @@ public class Patient {
 
     /**
      * Set day of birth
+     *
      * @param dobDay
      */
     public void setDobDay(int dobDay) {
@@ -91,6 +100,7 @@ public class Patient {
 
     /**
      * Get month of birth
+     *
      * @return
      */
     public int getDobMonth() {
@@ -99,6 +109,7 @@ public class Patient {
 
     /**
      * Set month of birth
+     *
      * @param dobMonth
      */
     public void setDobMonth(int dobMonth) {
@@ -107,6 +118,7 @@ public class Patient {
 
     /**
      * Get year of birth
+     *
      * @return
      */
     public int getDobYear() {
@@ -115,6 +127,7 @@ public class Patient {
 
     /**
      * Set year of birth
+     *
      * @param dobYear
      */
     public void setDobYear(int dobYear) {

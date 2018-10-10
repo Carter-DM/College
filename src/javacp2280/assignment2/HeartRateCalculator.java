@@ -1,5 +1,10 @@
 package javacp2280.assignment2;
 
+/**
+ * HeartRateCalculator class
+ *
+ * @author Carter Daly-MacPhail
+ */
 public class HeartRateCalculator {
 
     /**
