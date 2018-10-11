@@ -25,16 +25,22 @@ public class PatientHeartRateTester {
         int dobMonth = in.nextInt();
         System.out.print("Year: ");
         int dobYear = in.nextInt();
+        System.out.println("Enter patient's height in inches: ");
+        double height = in.nextDouble();
+        System.out.println("Enter patient's weight in pounds: ");
+        double weight = in.nextDouble();
 
 
-        Patient patient = new Patient(fName, lName, dobDay, dobMonth, dobYear, 67.2, 105);
-        System.out.printf("\nPatient name: %s %s\nPatient date of birth (D/M/Y): %d/%d/%d\nPatient age: %s years\n",
+        Patient patient = new Patient(fName, lName, dobDay, dobMonth, dobYear, height, weight);
+        System.out.printf("\nPatient name: %s %s\nPatient date of birth (D/M/Y): %d/%d/%d\nPatient age: %s years\nPatient height: %.1fin\nPatient weight: %.1flbs\n",
                 patient.getfName(),
                 patient.getlName(),
                 patient.getDobDay(),
                 patient.getDobMonth(),
                 patient.getDobYear(),
-                patient.getAgeInYears()
+                patient.getAgeInYears(),
+                patient.getHeight(),
+                patient.getWeight()
         );
 
         double maximumHeartRate = HeartRateCalculator.getMaximumHeartRate(patient.getAgeInYears());
@@ -43,5 +49,6 @@ public class PatientHeartRateTester {
                 HeartRateCalculator.getHeartRateLowerBound(maximumHeartRate),
                 HeartRateCalculator.getHeartRateUpperBound(maximumHeartRate));
 
+        System.out.printf("\nPatient's BMI: %.2f\n",BMICalculator.getBMI(height, weight));
     }
 }
