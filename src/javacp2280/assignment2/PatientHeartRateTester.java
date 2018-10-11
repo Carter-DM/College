@@ -1,6 +1,5 @@
 package javacp2280.assignment2;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
