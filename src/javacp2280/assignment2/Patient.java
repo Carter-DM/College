@@ -15,6 +15,8 @@ public class Patient {
     private int dobDay;
     private int dobMonth;
     private int dobYear;
+    private double height;
+    private double weight;
 
     /**
      * Patient Constructor
@@ -24,13 +26,17 @@ public class Patient {
      * @param dobDay   Day of birth
      * @param dobMonth Month of birth
      * @param dobYear  Year of birth
+     * @param height   Patient's height in inches
+     * @param weight   Patient's weight in pounds
      */
-    public Patient(String fName, String lName, int dobDay, int dobMonth, int dobYear) {
+    public Patient(String fName, String lName, int dobDay, int dobMonth, int dobYear, double height, double weight) {
         this.fName = fName;
         this.lName = lName;
         this.dobDay = dobDay;
         this.dobMonth = dobMonth;
         this.dobYear = dobYear;
+        this.height = height;
+        this.weight = weight;
 
     }
 
@@ -132,6 +138,42 @@ public class Patient {
      */
     public void setDobYear(int dobYear) {
         this.dobYear = dobYear;
+    }
+
+    /**
+     * Get height
+     *
+     * @return
+     */
+    public double getHeight() {
+        return height;
+    }
+
+    /**
+     * Set height
+     *
+     * @param height
+     */
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    /**
+     * Get weight
+     *
+     * @return
+     */
+    public double getWeight() {
+        return weight;
+    }
+
+    /**
+     * Set weight
+     *
+     * @param weight
+     */
+    public void setWeight(double weight) {
+        this.weight = weight;
     }
 
 }
