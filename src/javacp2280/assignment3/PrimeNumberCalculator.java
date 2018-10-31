@@ -48,5 +48,28 @@ public class PrimeNumberCalculator {
         return factors;
     }
 
-
+    /**
+     * printPrimesBetweenNumbers method
+     * <p>Takes an upper bound and a lower bound and returns a string containing
+     * all prime numbers between them.</p>
+     *
+     * @param lowerBound
+     * @param upperBound
+     * @return
+     */
+    public static String printPrimesBetweenNumbers(int lowerBound, int upperBound){
+        String primes = "";
+        int displayCount = 0; // Counter used to print primes nicer
+        for(int i = lowerBound; i < upperBound; i++){
+            if (isPrime(i)){
+                primes += i + " ";
+                displayCount += 1;
+            }
+            if (displayCount == 10){
+                displayCount = 0;
+                primes += "\n";
+            }
+        }
+        return primes;
+    }
 }
