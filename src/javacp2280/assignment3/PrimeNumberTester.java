@@ -26,7 +26,7 @@ public class PrimeNumberTester {
                 selectedGetPrimesBetweenTwoNumbers(in);
             } else if (userInput.equals("4")) {
                 selectedPrintPrimesUpTo10000();
-            } else {
+            } else if (!userInput.equals("x")){
                 System.out.println("Invalid input.");
             }
 
