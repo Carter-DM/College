@@ -12,7 +12,7 @@ public class PrimeNumberTester {
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
-        String userInput = "";
+        String userInput;
         do {
             System.out.println("\n=======================================================");
             printMainMenu();
