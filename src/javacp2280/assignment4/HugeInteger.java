@@ -1,6 +1,5 @@
 package javacp2280.assignment4;
 
-import java.util.Arrays;
 
 /**
  * Huge Integer class
@@ -8,15 +7,37 @@ import java.util.Arrays;
  * @author Carter Daly-MacPhail
  */
 public class HugeInteger {
-    public HugeInteger() {
+    private char[] charArray;
 
+    /**
+     * HugeInteger constructor
+     *
+     * @param integerString
+     */
+    public HugeInteger(String integerString) {
+        this.charArray = parse(integerString);
     }
 
-    public static char[] parse(String stringInteger) {
-        char[] arrayInteger = new char[40];
+    /**
+     * parse method
+     *
+     * @param stringInteger
+     * @return
+     */
+    public char[] parse(String stringInteger) {
+        char[] charArray = new char[40];
         for (int i = 0; i < stringInteger.length(); i++) {
-            arrayInteger[i] = stringInteger.charAt(i);
+            charArray[i] = stringInteger.charAt(i);
         }
-        return arrayInteger;
+        return charArray;
+    }
+
+    /**
+     * toString method
+     *
+     * @return
+     */
+    public String toString() {
+        return String.valueOf(this.charArray);
     }
 }
