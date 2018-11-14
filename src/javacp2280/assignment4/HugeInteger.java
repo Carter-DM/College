@@ -17,20 +17,21 @@ public class HugeInteger {
      * @param integerString
      */
     public HugeInteger(String integerString) {
-        setToZero();
-        this.charArray = parse(integerString);
+        this.charArray = getZeroArray();
+        parse(integerString);
     }
 
     /**
-     * setToZero method
+     * getZeroArray method
      *
      * <p>Initializes the character array to 40 zero chars.</p>
      */
-    private void setToZero(){
-        this.charArray = new char[40];
-        for (int i = 0; i < this.charArray.length; i++){
-            charArray[i] = 0;
+    private char[] getZeroArray() {
+        charArray = new char[40];
+        for (int i = 0; i < charArray.length; i++) {
+            charArray[i] = '0';
         }
+        return charArray;
     }
 
     /**
@@ -39,14 +40,17 @@ public class HugeInteger {
      * @param stringInteger
      * @return
      */
-    public char[] parse(String stringInteger) {
-        char[] charArray = new char[40];
-        for (int i = 0; i < stringInteger.length(); i++) {
-            if (isDigit(stringInteger.charAt(i))) {
-                charArray[i] = stringInteger.charAt(i);
+    public void parse(String stringInteger) {
+        // stringInteger must contain less than 40 chars
+        if (stringInteger.length() <= 40) {
+            int charArrayIndex = this.charArray.length - 1;
+            for (int i = stringInteger.length() - 1; i >= 0; i--) {
+                if (isDigit(stringInteger.charAt(i))) {
+                    this.charArray[charArrayIndex] = stringInteger.charAt(i);
+                    charArrayIndex--;
+                }
             }
         }
-        return charArray;
     }
 
     /**
