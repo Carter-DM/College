@@ -1,6 +1,5 @@
 package javacp2280.assignment4;
 
-
 import static java.lang.Character.isDigit;
 
 /**
@@ -36,6 +35,7 @@ public class HugeInteger {
 
     /**
      * parse method
+     * <p>Takes String containing huge integer. Takes each char and inserts into the charArray</p>
      *
      * @param stringInteger
      * @return
@@ -51,6 +51,33 @@ public class HugeInteger {
                 }
             }
         }
+    }
+
+    /**
+     * add method
+     * @param hugeInteger2
+     * @return
+     */
+    public char[] add(HugeInteger hugeInteger2){
+        char[] sum = new char[40];
+        int carry = 0;
+        char[] hugeInt1 = this.getCharArray();
+        char[] hugeInt2 = hugeInteger2.getCharArray();
+        for (int i = hugeInt1.length - 1; i >=0; i--){
+            int tempSum = carry + Character.getNumericValue(hugeInt1[i]) + Character.getNumericValue(hugeInt2[i]);
+            carry = tempSum / 10 % 10;
+            sum[i] = Character.forDigit(tempSum % 10, 10);
+        }
+        return sum;
+    }
+
+    /**
+     * getCharArray method
+     *
+     * @return
+     */
+    public char[] getCharArray(){
+        return this.charArray;
     }
 
     /**
