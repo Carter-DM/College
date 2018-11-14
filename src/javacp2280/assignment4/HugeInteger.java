@@ -1,6 +1,8 @@
 package javacp2280.assignment4;
 
 
+import static java.lang.Character.isDigit;
+
 /**
  * Huge Integer class
  *
@@ -15,7 +17,20 @@ public class HugeInteger {
      * @param integerString
      */
     public HugeInteger(String integerString) {
+        setToZero();
         this.charArray = parse(integerString);
+    }
+
+    /**
+     * setToZero method
+     *
+     * <p>Initializes the character array to 40 zero chars.</p>
+     */
+    private void setToZero(){
+        this.charArray = new char[40];
+        for (int i = 0; i < this.charArray.length; i++){
+            charArray[i] = 0;
+        }
     }
 
     /**
@@ -27,7 +42,9 @@ public class HugeInteger {
     public char[] parse(String stringInteger) {
         char[] charArray = new char[40];
         for (int i = 0; i < stringInteger.length(); i++) {
-            charArray[i] = stringInteger.charAt(i);
+            if (isDigit(stringInteger.charAt(i))) {
+                charArray[i] = stringInteger.charAt(i);
+            }
         }
         return charArray;
     }
