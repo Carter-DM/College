@@ -55,15 +55,16 @@ public class HugeInteger {
 
     /**
      * add method
+     *
      * @param hugeInteger2
      * @return
      */
-    public char[] add(HugeInteger hugeInteger2){
+    public char[] add(HugeInteger hugeInteger2) {
         char[] sum = new char[40];
         int carry = 0;
         char[] hugeInt1 = this.getCharArray();
         char[] hugeInt2 = hugeInteger2.getCharArray();
-        for (int i = hugeInt1.length - 1; i >=0; i--){
+        for (int i = hugeInt1.length - 1; i >= 0; i--) {
             int tempSum = carry + Character.getNumericValue(hugeInt1[i]) + Character.getNumericValue(hugeInt2[i]);
             carry = tempSum / 10 % 10;
             sum[i] = Character.forDigit(tempSum % 10, 10);
@@ -72,11 +73,32 @@ public class HugeInteger {
     }
 
     /**
+     * isGreaterThan method
+     * <p>Compares two HugeIntegers to determine if the first is greater than the second.</p>
+     *
+     * @param hugeInteger2
+     * @return
+     */
+    public boolean isGreaterThan(HugeInteger hugeInteger2) {
+        char[] hugeInt1 = this.getCharArray();
+        char[] hugeInt2 = hugeInteger2.getCharArray();
+        for (int i = 0; i < hugeInt1.length; i--) {
+            if (hugeInt1[i] > hugeInt2[i]) {
+                return true;
+            }
+            if (hugeInt1[i] < hugeInt2[i]) {
+                return false;
+            }
+        }
+        return false;
+    }
+
+    /**
      * getCharArray method
      *
      * @return
      */
-    public char[] getCharArray(){
+    public char[] getCharArray() {
         return this.charArray;
     }
 
