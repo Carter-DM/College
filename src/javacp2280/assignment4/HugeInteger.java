@@ -72,6 +72,25 @@ public class HugeInteger {
         return sum;
     }
 
+    public char[] subtract(HugeInteger hugeInteger2) {
+        char[] difference = new char[41];
+        char[] hugeInt1 = new char[40];
+        char[] hugeInt2 = new char[40];
+        if (hugeInteger2.isGreaterThan(this)) {
+            hugeInt1 = hugeInteger2.getCharArray();
+            hugeInt2 = this.getCharArray();
+            difference[0] = '-';
+        } else {
+            hugeInt1 = this.getCharArray();
+            hugeInt2 = hugeInteger2.getCharArray();
+        }
+        for (int i = hugeInt1.length - 1; i >= 0; i--){
+            int temp = 0;
+            if (hugeInt1[i] >= hugeInt2[i]){
+            }
+        }
+    }
+
     /**
      * isGreaterThan method
      * <p>Compares two HugeIntegers to determine if the first is greater than the second.</p>
@@ -82,7 +101,7 @@ public class HugeInteger {
     public boolean isGreaterThan(HugeInteger hugeInteger2) {
         char[] hugeInt1 = this.getCharArray();
         char[] hugeInt2 = hugeInteger2.getCharArray();
-        for (int i = 0; i < hugeInt1.length; i--) {
+        for (int i = 0; i < hugeInt1.length; i++) {
             if (hugeInt1[i] > hugeInt2[i]) {
                 return true;
             }
