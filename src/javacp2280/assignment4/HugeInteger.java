@@ -74,8 +74,8 @@ public class HugeInteger {
 
     public char[] subtract(HugeInteger hugeInteger2) {
         char[] difference = new char[41];
-        char[] hugeInt1 = new char[40];
-        char[] hugeInt2 = new char[40];
+        char[] hugeInt1;
+        char[] hugeInt2;
         if (hugeInteger2.isGreaterThan(this)) {
             hugeInt1 = hugeInteger2.getCharArray();
             hugeInt2 = this.getCharArray();
@@ -84,9 +84,21 @@ public class HugeInteger {
             hugeInt1 = this.getCharArray();
             hugeInt2 = hugeInteger2.getCharArray();
         }
-        for (int i = hugeInt1.length - 1; i >= 0; i--){
+        for (int i = hugeInt1.length - 1; i >= 0; i--) {
             int temp = 0;
-            if (hugeInt1[i] >= hugeInt2[i]){
+            if (hugeInt1[i] >= hugeInt2[i]) {
+                temp = Character.getNumericValue(hugeInt1[i]) - Character.getNumericValue(hugeInt2[i]);
+            } else {
+                int j = i;
+                while (j - 1 >= 0) {
+                    if (hugeInt1[j - 1] == '0'){
+                        hugeInt1[j-1] = '9';
+                        j--;
+                    }
+                    else{
+                        // TODO
+                    }
+                }
             }
         }
     }
