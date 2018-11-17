@@ -110,7 +110,7 @@ public class HugeInteger {
         return difference;
     }
 
-    // TODO: Serious code duplication, consider refactor
+    // TODO: Serious code duplication, consider changing
 
     /**
      * isGreaterThan method
