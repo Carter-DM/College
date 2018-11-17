@@ -72,6 +72,12 @@ public class HugeInteger {
         return sum;
     }
 
+    /**
+     * subtract method
+     *
+     * @param hugeInteger2
+     * @return
+     */
     public char[] subtract(HugeInteger hugeInteger2) {
         char[] difference = new char[41];
         char[] hugeInt1;
@@ -86,7 +92,7 @@ public class HugeInteger {
         }
         for (int i = hugeInt1.length - 1; i >= 0; i--) {
             int temp = 0;
-            if (hugeInt1[i] >= hugeInt2[i]) {
+            if (Character.getNumericValue(hugeInt1[i]) >= Character.getNumericValue(hugeInt2[i])) {
                 temp = Character.getNumericValue(hugeInt1[i]) - Character.getNumericValue(hugeInt2[i]);
             } else {
                 int j = i;
@@ -96,12 +102,15 @@ public class HugeInteger {
                         j--;
                     }
                     else{
-                        // TODO
+                        // TODO: Finish subtract
                     }
                 }
             }
         }
+        return difference;
     }
+
+    // TODO: Serious code duplication, consider refactor
 
     /**
      * isGreaterThan method
@@ -122,6 +131,84 @@ public class HugeInteger {
             }
         }
         return false;
+    }
+
+    /**
+     * isLessThan method
+     * <p>Compares two HugeIntegers to determine if the first is less than the second.</p>
+     *
+     * @param hugeInteger2
+     * @return
+     */
+    public boolean isLessThan(HugeInteger hugeInteger2) {
+        char[] hugeInt1 = this.getCharArray();
+        char[] hugeInt2 = hugeInteger2.getCharArray();
+        for (int i = 0; i < hugeInt1.length; i++) {
+            if (hugeInt1[i] < hugeInt2[i]) {
+                return true;
+            }
+            if (hugeInt1[i] > hugeInt2[i]) {
+                return false;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * isGreaterThanOrEqualTo method
+     *
+     * @param hugeInteger2
+     * @return
+     */
+    public boolean isGreaterThanOrEqualTo(HugeInteger hugeInteger2) {
+        char[] hugeInt1 = this.getCharArray();
+        char[] hugeInt2 = hugeInteger2.getCharArray();
+        for (int i = 0; i < hugeInt1.length; i++) {
+            if (hugeInt1[i] >= hugeInt2[i]) {
+                return true;
+            }
+            if (hugeInt1[i] < hugeInt2[i]) {
+                return false;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * isLessThanOrEqualTo method
+     *
+     * @param hugeInteger2
+     * @return
+     */
+    public boolean isLessThanOrEqualTo(HugeInteger hugeInteger2) {
+        char[] hugeInt1 = this.getCharArray();
+        char[] hugeInt2 = hugeInteger2.getCharArray();
+        for (int i = 0; i < hugeInt1.length; i++) {
+            if (hugeInt1[i] <= hugeInt2[i]) {
+                return true;
+            }
+            if (hugeInt1[i] > hugeInt2[i]) {
+                return false;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * isEqualTo method
+     *
+     * @param hugeInteger2
+     * @return
+     */
+    public boolean isEqualTo(HugeInteger hugeInteger2){
+        char[] hugeInt1 = this.getCharArray();
+        char[] hugeInt2 = hugeInteger2.getCharArray();
+        for (int i = 0; i < hugeInt1.length; i++){
+            if (Character.getNumericValue(hugeInt1[i]) != Character.getNumericValue(hugeInt2[i])){
+                return false;
+            }
+        }
+        return true;
     }
 
     /**

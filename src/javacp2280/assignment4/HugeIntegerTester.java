@@ -12,9 +12,16 @@ public class HugeIntegerTester {
         HugeInteger hugeInteger1 = new HugeInteger(hugeIntString1);
         HugeInteger hugeInteger2 = new HugeInteger(hugeIntString2);
 
-        System.out.println(98 / 10 % 10);
-        System.out.println(98 % 10);
         System.out.println("Expected: 98681704097321786548");
         System.out.println(hugeInteger1.add(hugeInteger2));
+
+        System.out.println("Expected: false");
+        System.out.println(hugeInteger1.isEqualTo(hugeInteger2));
+
+        System.out.println("Expected: false");
+        System.out.println(hugeInteger1.isGreaterThan(hugeInteger2));
+
+        System.out.println("Expected: true");
+        System.out.println(hugeInteger1.isLessThan(hugeInteger2));
     }
 }
