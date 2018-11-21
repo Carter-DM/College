@@ -123,10 +123,10 @@ public class HugeInteger {
         char[] hugeInt1 = this.getCharArray();
         char[] hugeInt2 = hugeInteger2.getCharArray();
         for (int i = 0; i < hugeInt1.length; i++) {
-            if (hugeInt1[i] > hugeInt2[i]) {
+            if (Character.getNumericValue(hugeInt1[i]) > Character.getNumericValue(hugeInt2[i])) {
                 return true;
             }
-            if (hugeInt1[i] < hugeInt2[i]) {
+            if (Character.getNumericValue(hugeInt1[i]) < Character.getNumericValue(hugeInt2[i])) {
                 return false;
             }
         }
@@ -144,10 +144,10 @@ public class HugeInteger {
         char[] hugeInt1 = this.getCharArray();
         char[] hugeInt2 = hugeInteger2.getCharArray();
         for (int i = 0; i < hugeInt1.length; i++) {
-            if (hugeInt1[i] < hugeInt2[i]) {
+            if (Character.getNumericValue(hugeInt1[i]) < Character.getNumericValue(hugeInt2[i])) {
                 return true;
             }
-            if (hugeInt1[i] > hugeInt2[i]) {
+            if (Character.getNumericValue(hugeInt1[i]) > Character.getNumericValue(hugeInt2[i])) {
                 return false;
             }
         }
@@ -164,10 +164,10 @@ public class HugeInteger {
         char[] hugeInt1 = this.getCharArray();
         char[] hugeInt2 = hugeInteger2.getCharArray();
         for (int i = 0; i < hugeInt1.length; i++) {
-            if (hugeInt1[i] >= hugeInt2[i]) {
+            if (Character.getNumericValue(hugeInt1[i]) >= Character.getNumericValue(hugeInt2[i])) {
                 return true;
             }
-            if (hugeInt1[i] < hugeInt2[i]) {
+            if (Character.getNumericValue(hugeInt1[i]) < Character.getNumericValue(hugeInt2[i])) {
                 return false;
             }
         }
@@ -184,10 +184,10 @@ public class HugeInteger {
         char[] hugeInt1 = this.getCharArray();
         char[] hugeInt2 = hugeInteger2.getCharArray();
         for (int i = 0; i < hugeInt1.length; i++) {
-            if (hugeInt1[i] <= hugeInt2[i]) {
+            if (Character.getNumericValue(hugeInt1[i]) <= Character.getNumericValue(hugeInt2[i])) {
                 return true;
             }
-            if (hugeInt1[i] > hugeInt2[i]) {
+            if (Character.getNumericValue(hugeInt1[i]) > Character.getNumericValue(hugeInt2[i])) {
                 return false;
             }
         }
