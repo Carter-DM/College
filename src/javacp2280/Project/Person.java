@@ -8,7 +8,7 @@ import java.time.Period;
  *
  * @author Carter Daly-MacPhail
  */
-public abstract class Person {
+public class Person {
 
     private String fName;
     private String lName;
