@@ -6,7 +6,7 @@ package javacp2280.Project;
  * @author Carter Daly-MacPhail
  */
 public class BMICalculator {
-    public static final int BMICONST = 703;
+    public static final int BMI_CONST = 703;
 
     /**
      * getBMI
@@ -17,6 +17,6 @@ public class BMICalculator {
      * @return
      */
     public static double getBMI(double height, double weight){
-        return (weight * BMICONST) / (height * height);
+        return (weight * BMI_CONST) / (height * height);
     }
 }
