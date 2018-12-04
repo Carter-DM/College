@@ -37,4 +37,8 @@ public class ExecutiveEmployee extends Employee {
     public double getAnnualWage() {
         return salary + bonus;
     }
+
+    public double getAnnualWageNoBonus(){
+        return salary;
+    }
 }
