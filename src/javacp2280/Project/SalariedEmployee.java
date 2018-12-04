@@ -1,6 +1,7 @@
 package javacp2280.Project;
 
-public abstract class Employee extends Person {
+public class SalariedEmployee extends Employee {
+    private double salary;
 
     /**
      * Person Constructor
@@ -12,10 +13,15 @@ public abstract class Employee extends Person {
      * @param dobYear  Year of birth
      * @param height   Persons height in inches
      * @param weight   Persons weight in pounds
+     * @param salary   Employees annual salary
      */
-    public Employee(String fName, String lName, int dobDay, int dobMonth, int dobYear, double height, double weight) {
+    public SalariedEmployee(String fName, String lName, int dobDay, int dobMonth, int dobYear, double height, double weight, double salary) {
         super(fName, lName, dobDay, dobMonth, dobYear, height, weight);
+        this.salary = salary;
     }
 
-    public abstract double getAnnualWage();
+    @Override
+    public double getAnnualWage() {
+        return this.salary;
+    }
 }
