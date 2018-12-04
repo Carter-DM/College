@@ -1,5 +1,10 @@
 package javacp2280.Project;
 
+/**
+ * Hourly Employee class
+ *
+ * @author Carter Daly-MacPhail
+ */
 public class HourlyEmployee extends Employee {
     private double hourlyWage;
     private double hoursPerWeek;
@@ -23,6 +28,11 @@ public class HourlyEmployee extends Employee {
         this.hoursPerWeek = hoursPerWeek;
     }
 
+    /**
+     * getAnnualWage method
+     * <b>Overrides Employee.getAnnualWage</b>
+     * @return
+     */
     @Override
     public double getAnnualWage() {
         return this.hourlyWage * this.hoursPerWeek * 52;

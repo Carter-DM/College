@@ -1,5 +1,10 @@
 package javacp2280.Project;
 
+/**
+ * Employee abstract class
+ *
+ * @author Carter Daly-MacPhail
+ */
 public abstract class Employee extends Person {
 
     /**
@@ -17,5 +22,9 @@ public abstract class Employee extends Person {
         super(fName, lName, dobDay, dobMonth, dobYear, height, weight);
     }
 
+    /**
+     * getAnnualWage abstract method
+     * @return
+     */
     public abstract double getAnnualWage();
 }

@@ -1,5 +1,10 @@
 package javacp2280.Project;
 
+/**
+ * Executive Employee class
+ *
+ * @author Carter Daly-MacPhail
+ */
 public class ExecutiveEmployee extends Employee {
     private double salary;
     private double bonus;
@@ -23,6 +28,11 @@ public class ExecutiveEmployee extends Employee {
         this.bonus = bonus;
     }
 
+    /**
+     * getAnnualWage method
+     * <b>Overrides Employee.getAnnualWage</b>
+     * @return
+     */
     @Override
     public double getAnnualWage() {
         return salary + bonus;
