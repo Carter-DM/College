@@ -43,7 +43,7 @@ public class RandomGenerator {
                     48 + (84 - 48 + 1) * random.nextDouble(),
                     90 + (600 - 90 + 1) * random.nextDouble(),
                     20 + (80 - 20 + 1) * random.nextDouble(),
-                    1 + (40 - 1 + 1) * random.nextDouble()
+                    20 + (40 - 20 + 1) * random.nextDouble()
             );
         } else if (randomEmployeeType == 1) {
             return new SalariedEmployee(

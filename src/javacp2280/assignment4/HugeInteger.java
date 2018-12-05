@@ -233,6 +233,14 @@ public class HugeInteger {
      * @return
      */
     public String toString() {
-        return String.valueOf(this.charArray);
+        int i = 0;
+        String output = "";
+        while ((i < this.charArray.length) && (this.charArray[i] == '0')){
+            i ++;
+        }
+        while (i < this.charArray.length){
+            output += this.charArray[i];
+        }
+        return output;
     }
 }

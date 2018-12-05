@@ -7,6 +7,7 @@ package javacp2280.assignment4;
  */
 public class HugeIntegerTester {
     public static void main(String[] args) {
+
         String hugeIntString1 = "8646239463928692";
         String hugeIntString2 = "98673057857857857856";
         HugeInteger hugeInteger1 = new HugeInteger(hugeIntString1);
@@ -25,7 +26,7 @@ public class HugeIntegerTester {
         System.out.println(hugeInteger1.isLessThan(hugeInteger2));
 
         HugeInteger hugeIntSub1 = new HugeInteger("2001");
-        HugeInteger hugeIntSub2 = new HugeInteger("7");
+        HugeInteger hugeIntSub2 = new HugeInteger("7002");
 
         System.out.println(hugeIntSub1.subtract(hugeIntSub2));
     }
