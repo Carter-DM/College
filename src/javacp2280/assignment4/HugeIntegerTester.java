@@ -23,5 +23,10 @@ public class HugeIntegerTester {
 
         System.out.println("Expected: true");
         System.out.println(hugeInteger1.isLessThan(hugeInteger2));
+
+        HugeInteger hugeIntSub1 = new HugeInteger("2001");
+        HugeInteger hugeIntSub2 = new HugeInteger("7");
+
+        System.out.println(hugeIntSub1.subtract(hugeIntSub2));
     }
 }

@@ -79,7 +79,7 @@ public class HugeInteger {
      * @return
      */
     public char[] subtract(HugeInteger hugeInteger2) {
-        char[] difference = new char[41];
+        char[] difference = new char[40];
         char[] hugeInt1;
         char[] hugeInt2;
         if (hugeInteger2.isGreaterThan(this)) {
@@ -96,16 +96,23 @@ public class HugeInteger {
                 temp = Character.getNumericValue(hugeInt1[i]) - Character.getNumericValue(hugeInt2[i]);
             } else {
                 int j = i;
-                while (j - 1 >= 0) {
-                    if (hugeInt1[j - 1] == '0'){
-                        hugeInt1[j-1] = '9';
-                        j--;
+                while ((j - 1 >= 0)) {
+                    if (hugeInt1[j - 1] == '0') {
+                        hugeInt1[j - 1] = '9';
+                    } else {
+                        // Subtracting 1 from the first non 0 integer and adding 10 to the integer we're borrowing to
+                        int subtractOneFromInt = Character.getNumericValue(hugeInt1[j - 1]);
+                        int addTenToInt = Character.getNumericValue(hugeInt1[i]);
+                        subtractOneFromInt--;
+                        addTenToInt = addTenToInt + 10 - Character.getNumericValue(hugeInt2[i]);
+                        hugeInt1[j - 1] = Character.forDigit(subtractOneFromInt, 10);
+                        temp = addTenToInt;
+                        break;
                     }
-                    else{
-                        // TODO: Finish subtract
-                    }
+                    j--;
                 }
             }
+            difference[i] = Character.forDigit(temp, 10);
         }
         return difference;
     }
@@ -200,11 +207,11 @@ public class HugeInteger {
      * @param hugeInteger2
      * @return
      */
-    public boolean isEqualTo(HugeInteger hugeInteger2){
+    public boolean isEqualTo(HugeInteger hugeInteger2) {
         char[] hugeInt1 = this.getCharArray();
         char[] hugeInt2 = hugeInteger2.getCharArray();
-        for (int i = 0; i < hugeInt1.length; i++){
-            if (Character.getNumericValue(hugeInt1[i]) != Character.getNumericValue(hugeInt2[i])){
+        for (int i = 0; i < hugeInt1.length; i++) {
+            if (Character.getNumericValue(hugeInt1[i]) != Character.getNumericValue(hugeInt2[i])) {
                 return false;
             }
         }
