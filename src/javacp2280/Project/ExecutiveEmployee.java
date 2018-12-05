@@ -35,10 +35,15 @@ public class ExecutiveEmployee extends Employee {
      */
     @Override
     public double getAnnualWage() {
-        return salary + bonus;
+        return salary;
     }
 
-    public double getAnnualWageNoBonus(){
-        return salary;
+    /**
+     * getAnnualWageWithBonus method
+     * <p>Returns annual salary plus bonus.</p>
+     * @return
+     */
+    public double getAnnualWageWithBonus(){
+        return salary + bonus;
     }
 }
