@@ -17,9 +17,7 @@ public class ShapeMain {
         }
 
         for (Shape shape: shapes) {
-            if (shape != null) {
-                System.out.printf("%s. Area: %.2f\n\n", shape.getDescription(), shape.getArea());
-            }
+            System.out.printf("%s. Area: %.2f\n\n", shape.getDescription(), shape.getArea());
         }
     }
 }

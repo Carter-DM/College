@@ -8,7 +8,7 @@ public class DebugException
       {
          throw new SpecialIOException();
       }
-      catch ( Exception exception )
+      catch ( SpecialIOException exception )
       {
          System.err.println( exception.toString() );
       }

@@ -1,5 +1,4 @@
 package javacp2560.assignment2;
-import javacp2560.assignment2.InvalidShapeParameterException;
 
 /**
  * Circle class

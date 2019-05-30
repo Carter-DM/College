@@ -15,17 +15,17 @@ public class ShapeGenerator {
         double rand = Math.random();
         Shape shape = null;
 
-        try {
-            if (rand > 0.5) {
-                shape = new Circle(Math.random() * 30 - 10);
-            } else {
-                shape = new Rectangle((Math.random() * 30 - 10), (Math.random() * 30 - 10));
+        while (shape == null) {
+            try {
+                if (rand > 0.5) {
+                    shape = new Circle(Math.random() * 30 - 10);
+                } else {
+                    shape = new Rectangle((Math.random() * 30 - 10), (Math.random() * 30 - 10));
+                }
+            } catch (InvalidShapeParameterException e) {
+                System.err.printf("Invalid Shape parameter, values cannot be negative.\n\n");
             }
-        } catch (InvalidShapeParameterException e) {
-            System.out.printf("Invalid Shape parameter, values cannot be negative.\n\n");
         }
-        finally {
-            return shape;
-        }
+        return shape;
     }
 }
