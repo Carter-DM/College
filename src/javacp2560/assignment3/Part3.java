@@ -3,7 +3,7 @@ package javacp2560.assignment3;
 import java.io.*;
 
 /**
- * Java CP2560 Assignment 3 Question 2 class
+ * Java CP2560 Assignment 3 Question 3 class
  *
  * @author Carter Daly-MacPhail 20149926
  */
