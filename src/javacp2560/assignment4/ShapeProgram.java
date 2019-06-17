@@ -43,7 +43,6 @@ public class ShapeProgram {
      * @param list
      */
     private static void sortShapeList(List<Shape> list){
-        List<Shape> sortedShapes = new ArrayList<>();
         Collections.sort(list, new SortByArea());
     }
 }
