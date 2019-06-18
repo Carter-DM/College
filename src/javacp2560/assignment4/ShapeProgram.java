@@ -43,17 +43,6 @@ public class ShapeProgram {
      * @param list
      */
     private static void sortShapeList(List<Shape> list){
-        Collections.sort(list, new SortByArea());
-    }
-}
-
-/**
- * SortByArea class
- */
-class SortByArea implements Comparator<Shape>{
-    @Override
-    public int compare(Shape shape1, Shape shape2) {
-        double diff = shape1.getArea() - shape2.getArea();
-        return (int) diff;
+        Collections.sort(list, Comparator.comparingDouble(Shape::getArea));
     }
 }
