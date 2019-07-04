@@ -28,7 +28,7 @@ public class Interface extends JFrame {
         JButton button3 = new JButton("Hard");
         buttons.add(button3);
 
-        Game game = new Game(questionLabel, button1, button2, button3);
+        Game game = new Game(questionLabel, buttons, button1, button2, button3);
 
         button1.addActionListener(e -> game.setDifficultyAndStart(0));
         button2.addActionListener(e -> game.setDifficultyAndStart(1));
