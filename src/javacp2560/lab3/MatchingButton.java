@@ -26,10 +26,10 @@ public class MatchingButton extends JToggleButton {
 
     /**
      * updateImageIcon
-     * @param imageUrl
+     * @param imageIcon
      */
-    public void updateImageIcon(String imageUrl){
-        this.setIcon(new ImageIcon(imageUrl));
+    public void updateImageIcon(ImageIcon imageIcon){
+        this.setIcon(imageIcon);
     }
 
     /**

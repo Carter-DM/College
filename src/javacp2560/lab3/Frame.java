@@ -12,7 +12,7 @@ public class Frame extends JFrame {
     public Frame(){
         super("Matching Game");
         setLayout(new GridLayout(2, 2));
-        setSize(400, 400);
+        setSize(600, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
     }
