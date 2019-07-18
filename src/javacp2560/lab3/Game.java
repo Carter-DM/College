@@ -39,28 +39,43 @@ public class Game {
     }
 
     public void loop(){
+        if (allButtonsAreHidden()){
+            resetButtons();
+            loop();
+        }
         if (twoButtonsSelected()){
             if (imagesAreTheSame()){
                 JOptionPane.showMessageDialog(null, "Correct!");
-                resetButtons();
                 loop();
             }
             else{
                 JOptionPane.showMessageDialog(null, "Oops, that was incorrect!");
-                resetButtons();
                 loop();
             }
         }
     }
 
+    // Check if all buttons have been matched
+    private boolean allButtonsAreHidden(){
+        for (MatchingButton button: buttons){
+            if (button.isVisible() == true){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Reset buttons by deselecting them, making them visible and randomizing the images
     private void resetButtons(){
         for (MatchingButton button: buttons){
             button.setSelected(false);
+            button.setVisible(true);
         }
         addImagesToArray();
         updateImages();
     }
 
+    // Check if two buttons have been selected
     private boolean twoButtonsSelected(){
         int selected = 0;
         for (MatchingButton button: buttons) {
@@ -77,22 +92,30 @@ public class Game {
         return false;
     }
 
+    // This is gross and violating the single responsibility principle but shhhh
+    // Checks if images are the same and hides/deselects them
     private boolean imagesAreTheSame(){
-        List<String> imageDescriptions = new ArrayList<>();
+        List<MatchingButton> selectedButtons = new ArrayList<>();
         for (MatchingButton button: buttons) {
             if (button.isSelected()) {
-                imageDescriptions.add(button.getImageDescription());
+                selectedButtons.add(button);
             }
         }
-        if (imageDescriptions.get(0).equals(imageDescriptions.get(1))){
-
+        if (selectedButtons.get(0).getImageDescription().equals(selectedButtons.get(1).getImageDescription())){
+            selectedButtons.get(0).setVisible(false);
+            selectedButtons.get(0).setSelected(false);
+            selectedButtons.get(1).setVisible(false);
+            selectedButtons.get(1).setSelected(false);
             return true;
         }
         else {
+            selectedButtons.get(0).setSelected(false);
+            selectedButtons.get(1).setSelected(false);
             return false;
         }
     }
 
+    // Randomly assigns new images
     private void updateImages(){
         Random random = new Random();
         int rand;
