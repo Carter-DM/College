@@ -1,4 +1,4 @@
-package javacp2560.lab6;
+package javacp2560.lab6.part1;
 
 import javax.swing.*;
 import java.awt.*;
