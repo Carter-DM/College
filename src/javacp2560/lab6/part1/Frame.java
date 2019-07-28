@@ -54,10 +54,15 @@ public class Frame extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             if ((e.getSource() == nameField) || (e.getSource() == phoneField)) {
-                map.put(nameField.getText(), phoneField.getText());
-                displayArea.append("\n");
-                for (Map.Entry<String, String> entry : map.entrySet()){
-                    displayArea.append(entry.getValue() + "\n");
+                if ((nameField.getText().isEmpty()) || (phoneField.getText().isEmpty())) {
+                    displayArea.append("\nNeither field can be empty.\n");
+                }
+                else {
+                    map.put(nameField.getText(), phoneField.getText());
+                    displayArea.append("\n");
+                    for (Map.Entry<String, String> entry : map.entrySet()) {
+                        displayArea.append(entry.getValue() + "\n");
+                    }
                 }
             }
             else if (e.getSource() == nameEntryField) {
