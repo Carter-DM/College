@@ -1,9 +1,9 @@
-package javacp3561.assignment1.main;
+package javacp3561.assignment1.part1.main;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class PrimeNumberCalculatorFaster extends PrimeNumberCalculator {
+public class PrimeNumberCalculatorFast extends PrimeNumberCalculator {
 
     /**
      * Determine if n is prime in O(sqrt(n))
@@ -46,7 +46,7 @@ public class PrimeNumberCalculatorFaster extends PrimeNumberCalculator {
         if (n < 1) {
             return 1;
         }
-        else for (int i = 2; i <= Math.sqrt(n); i++) {
+        else for (int i = 2; i <= n; i++) {
             if (n % i == 0) {
                 return i;
             }

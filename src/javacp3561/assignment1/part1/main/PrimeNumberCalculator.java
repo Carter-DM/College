@@ -1,4 +1,4 @@
-package javacp3561.assignment1.main;
+package javacp3561.assignment1.part1.main;
 
 import java.util.List;
 

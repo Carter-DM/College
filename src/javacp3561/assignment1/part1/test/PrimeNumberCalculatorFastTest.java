@@ -1,6 +1,6 @@
-package javacp3561.assignment1.test;
+package javacp3561.assignment1.part1.test;
 
-import javacp3561.assignment1.main.PrimeNumberCalculatorFast;
+import javacp3561.assignment1.part1.main.PrimeNumberCalculatorFast;
 import org.junit.jupiter.api.Test;
 
 import java.util.LinkedList;
