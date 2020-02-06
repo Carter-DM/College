@@ -35,10 +35,10 @@ public class BigIntegerMain {
             System.out.println(e.getMessage());
         }
 
-        final String BIGINT = "32654";
+        final String BIGINT = "1125899906842624";
 
         BigInteger bigInteger = new BigInteger(BIGINT);
-        System.out.println("The prime factorization of " + bigInteger.toString() + " is " + BigIntegerPrimeCalculator.getPrimeFactorization(new BigInteger("32654")));
+        System.out.println("The prime factorization of " + bigInteger.toString() + " is " + BigIntegerPrimeCalculator.getPrimeFactorization(new BigInteger(BIGINT)));
     }
 
     static BigInteger bigIntegerPower(int n) {
