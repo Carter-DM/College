@@ -12,4 +12,60 @@
             <phone>010-410-0010</phone>
         </publisher>
     </publishers>
+    <authors>
+        <author id="S100">
+            <lastName>Smith</lastName>
+            <firstName>Sam</firstName>
+        </author>
+        <author id="J100">
+            <lastName>Jones</lastName>
+            <firstName>Janice</firstName>
+        </author>
+        <author id="A100">
+            <lastName>Austin</lastName>
+            <firstName>James</firstName>
+        </author>
+        <author id="M100">
+            <lastName>Martinez</lastName>
+            <firstName>Sheila</firstName>
+        </author>
+    </authors>
+    <books>
+        <book isbn="0401140733">
+            <title>Revenge of Mickey</title>
+            <datePublished>2005-12-14</datePublished>
+            <publisherId>1</publisherId>
+            <cost>14.20</cost>
+            <retail>22.00</retail>
+            <discount></discount>
+            <category>Family Literature</category>
+        </book>
+        <book isbn="4981341710">
+            <title>Building a Car with Toothpicks</title>
+            <datePublished>2006-03-18</datePublished>
+            <publisherId>2</publisherId>
+            <cost>37.80</cost>
+            <retail>59.95</retail>
+            <discount>3.00</discount>
+            <category>Family Life</category>
+        </book>
+        <book isbn="9959789321">
+            <title>E-Business the Easy Way</title>
+            <datePublished>2006-03-01</datePublished>
+            <publisherId>2</publisherId>
+            <cost>37.90</cost>
+            <retail>54.50</retail>
+            <discount></discount>
+            <category>Computer</category>
+        </book>
+        <book isbn="9247381001">
+            <title>How to Manage the Manager</title>
+            <datePublished>2003-05-09</datePublished>
+            <publisherId>1</publisherId>
+            <cost>15.40</cost>
+            <retail>31.95</retail>
+            <discount></discount>
+            <category>Business</category>
+        </book>
+    </books>
 </LibraryData>
