@@ -6,6 +6,11 @@ import java.io.IOException;
 import java.math.BigInteger;
 
 public class BigIntegerMain {
+
+    /**
+     * Main runner to test BigInteger calculator.
+     * @param args
+     */
     public static void main(String[] args) {
         try {
             final int N = 50;
@@ -30,7 +35,9 @@ public class BigIntegerMain {
             System.out.println(e.getMessage());
         }
 
-        BigInteger bigInteger = new BigInteger("32654");
+        final String BIGINT = "32654";
+
+        BigInteger bigInteger = new BigInteger(BIGINT);
         System.out.println("The prime factorization of " + bigInteger.toString() + " is " + BigIntegerPrimeCalculator.getPrimeFactorization(new BigInteger("32654")));
     }
 

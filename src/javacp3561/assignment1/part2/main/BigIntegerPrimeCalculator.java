@@ -53,6 +53,7 @@ public class BigIntegerPrimeCalculator {
         if (n.mod(TWO).equals(BigInteger.ZERO)) {
             return TWO;
         }
+        // Loop until f * f is greater than or equal to n.
         while (f.multiply(f).compareTo(n) <= 0) {
             if (n.mod(f).equals(BigInteger.ZERO)) {
                 return f;

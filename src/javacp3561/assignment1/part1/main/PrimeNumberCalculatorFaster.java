@@ -46,6 +46,9 @@ public class PrimeNumberCalculatorFaster extends PrimeNumberCalculator {
         if (n < 1) {
             return 1;
         }
+        else if (n % 2 == 0) {
+            return 2;
+        }
         else for (int i = 2; i <= Math.sqrt(n); i++) {
             if (n % i == 0) {
                 return i;
