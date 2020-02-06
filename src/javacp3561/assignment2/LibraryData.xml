@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LibraryData>
+    <publishers>
+        <publisher id="1">
+            <name>Printing is us</name>
+            <contact>Tommy Seymour</contact>
+            <phone>000-714-8321</phone>
+        </publisher>
+        <publisher id="2">
+            <name>Publish Our Way</name>
+            <contact>Jane Tomlin</contact>
+            <phone>010-410-0010</phone>
+        </publisher>
+    </publishers>
+</LibraryData>
