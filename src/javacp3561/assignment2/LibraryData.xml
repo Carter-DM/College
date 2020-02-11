@@ -68,4 +68,11 @@
             <category>Business</category>
         </book>
     </books>
+    <bookAuthors>
+        <bookAuthor isbn="0401140733" id="S100"/>
+        <bookAuthor isbn="0401140733" id="J100"/>
+        <bookAuthor isbn="4981341710" id="J100"/>
+        <bookAuthor isbn="9959789321" id="A100"/>
+        <bookAuthor isbn="9247381001" id="M100"/>
+    </bookAuthors>
 </LibraryData>
