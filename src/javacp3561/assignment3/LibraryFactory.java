@@ -164,7 +164,9 @@ public class LibraryFactory {
 
     public void addPublisher(Publisher publisher) {
         Element element = document.createElement("publisher");
-
+        NodeList publishers = document.getElementsByTagName("publishers");
+        element.setAttribute();
+        publishers.item(0).appendChild(element);
     }
 
     public void addAuthor(Author author) {
