@@ -1,14 +1,24 @@
 package javacp3561.assignment3;
 
 public class Publisher {
+    private String id;
     private String name;
     private String contact;
     private String phone;
 
-    public Publisher(String name, String contact, String phone) {
+    public Publisher(String id, String name, String contact, String phone) {
+        this.id = id;
         this.name = name;
         this.contact = contact;
         this.phone = phone;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {

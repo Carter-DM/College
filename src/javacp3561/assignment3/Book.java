@@ -1,20 +1,24 @@
 package javacp3561.assignment3;
 
+import java.util.List;
+
 public class Book {
     private String isbn;
     private String title;
+    private List<Author> author;
     private String datePublished;
-    private String publisherId;
-    private float cost;
-    private float retail;
-    private float discount;
+    private Publisher publisher;
+    private String cost;
+    private String retail;
+    private String discount;
     private String category;
 
-    public Book (String isbn, String title, String datePublished, String publisherId, float cost, float retail, float discount, String category) {
+    public Book (String isbn, String title, List<Author> author, String datePublished, Publisher publisher, String cost, String retail, String discount, String category) {
         this.isbn = isbn;
         this.title = title;
+        this.author = author;
         this.datePublished = datePublished;
-        this.publisherId = publisherId;
+        this.publisher = publisher;
         this.cost = cost;
         this.retail = retail;
         this.discount = discount;
@@ -37,6 +41,14 @@ public class Book {
         this.title = title;
     }
 
+    public List<Author> getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(List<Author> author) {
+        this.author = author;
+    }
+
     public String getDatePublished() {
         return datePublished;
     }
@@ -45,35 +57,35 @@ public class Book {
         this.datePublished = datePublished;
     }
 
-    public String getPublisherId() {
-        return publisherId;
+    public Publisher getPublisher() {
+        return publisher;
     }
 
-    public void setPublisherId(String publisherId) {
-        this.publisherId = publisherId;
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
     }
 
-    public float getCost() {
+    public String getCost() {
         return cost;
     }
 
-    public void setCost(float cost) {
+    public void setCost(String cost) {
         this.cost = cost;
     }
 
-    public float getRetail() {
+    public String getRetail() {
         return retail;
     }
 
-    public void setRetail(float retail) {
+    public void setRetail(String retail) {
         this.retail = retail;
     }
 
-    public float getDiscount() {
+    public String getDiscount() {
         return discount;
     }
 
-    public void setDiscount(float discount) {
+    public void setDiscount(String discount) {
         this.discount = discount;
     }
 
@@ -84,5 +96,4 @@ public class Book {
     public void setCategory(String category) {
         this.category = category;
     }
-
 }
