@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <LibraryData>
     <publishers>
         <publisher id="1">
@@ -11,7 +11,7 @@
             <contact>Jane Tomlin</contact>
             <phone>010-410-0010</phone>
         </publisher>
-    </publishers>
+   </publishers>
     <authors>
         <author id="S100">
             <lastName>Smith</lastName>
@@ -37,7 +37,7 @@
             <publisherId>1</publisherId>
             <cost>14.20</cost>
             <retail>22.00</retail>
-            <discount></discount>
+            <discount/>
             <category>Family Literature</category>
         </book>
         <book isbn="4981341710">
@@ -55,7 +55,7 @@
             <publisherId>2</publisherId>
             <cost>37.90</cost>
             <retail>54.50</retail>
-            <discount></discount>
+            <discount/>
             <category>Computer</category>
         </book>
         <book isbn="9247381001">
@@ -64,15 +64,15 @@
             <publisherId>1</publisherId>
             <cost>15.40</cost>
             <retail>31.95</retail>
-            <discount></discount>
+            <discount/>
             <category>Business</category>
         </book>
     </books>
     <bookAuthors>
-        <bookAuthor isbn="0401140733" id="S100"/>
-        <bookAuthor isbn="0401140733" id="J100"/>
-        <bookAuthor isbn="4981341710" id="J100"/>
-        <bookAuthor isbn="9959789321" id="A100"/>
-        <bookAuthor isbn="9247381001" id="M100"/>
+        <bookAuthor id="S100" isbn="0401140733"/>
+        <bookAuthor id="J100" isbn="0401140733"/>
+        <bookAuthor id="J100" isbn="4981341710"/>
+        <bookAuthor id="A100" isbn="9959789321"/>
+        <bookAuthor id="M100" isbn="9247381001"/>
     </bookAuthors>
 </LibraryData>

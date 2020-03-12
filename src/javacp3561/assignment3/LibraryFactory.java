@@ -9,6 +9,9 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,6 +25,10 @@ public class LibraryFactory {
     private DocumentBuilderFactory factory;
     private DocumentBuilder builder;
     private Document document;
+    private TransformerFactory transformerFactory;
+    private Transformer transformer;
+    private DOMSource source;
+    private StreamResult result;
     private List<Publisher> publishers;
     private List<Author> authors;
     private List<Book> books;
@@ -31,9 +38,19 @@ public class LibraryFactory {
         try {
             builder = factory.newDocumentBuilder();
             document = builder.parse(new File(pathname));
-        } catch (ParserConfigurationException | SAXException | IOException e) {
+
+            source = new DOMSource(document);
+            transformerFactory = TransformerFactory.newInstance();
+            transformer = transformerFactory.newTransformer();
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+            result = new StreamResult(pathname);
+
+        } catch (ParserConfigurationException | SAXException | IOException | TransformerException e) {
             e.printStackTrace();
         }
+
         parseXMLTObjects();
     }
 
@@ -162,18 +179,116 @@ public class LibraryFactory {
         throw new NullPointerException("There is no publisher with the ID you specified.");
     }
 
+    /**
+     * Appends a new Publisher node to the LibraryData.xml file
+     * @param publisher
+     */
     public void addPublisher(Publisher publisher) {
         Element element = document.createElement("publisher");
         NodeList publishers = document.getElementsByTagName("publishers");
-        element.setAttribute();
-        publishers.item(0).appendChild(element);
+
+        element.setAttribute("id", publisher.getId());
+        Element name = document.createElement("name");
+        Element contact = document.createElement("contact");
+        Element phone = document.createElement("phone");
+
+        name.appendChild(document.createTextNode(publisher.getName()));
+        contact.appendChild(document.createTextNode(publisher.getContact()));
+        phone.appendChild(document.createTextNode(publisher.getPhone()));
+
+        element.appendChild(name);
+        element.appendChild(contact);
+        element.appendChild(phone);
+
+        publishers.item(publishers.getLength() - 1).appendChild(element);
+        try {
+            transformer.transform(source, result);
+        } catch (TransformerException e) {
+            e.printStackTrace();
+        }
     }
 
+    /**
+     * Appends a new Author node to the LibraryData.xml file.
+     * @param author
+     */
     public void addAuthor(Author author) {
+        Element element = document.createElement("author");
+        NodeList authors = document.getElementsByTagName("authors");
 
+        element.setAttribute("id", author.getId());
+        Element lastName = document.createElement("lastName");
+        Element firstName = document.createElement("firstName");
+
+        lastName.appendChild(document.createTextNode(author.getLastName()));
+        firstName.appendChild(document.createTextNode(author.getFirstName()));
+
+        element.appendChild(lastName);
+        element.appendChild(firstName);
+
+        authors.item(authors.getLength() - 1).appendChild(element);
+        try {
+            transformer.transform(source, result);
+        } catch (TransformerException e) {
+            e.printStackTrace();
+        }
     }
 
+    /**
+     * Appends a new Book node to the LibraryData.xml file.
+     * @param book
+     */
     public void addBook(Book book) {
+        Element element = document.createElement("book");
+        NodeList books = document.getElementsByTagName("books");
 
+        element.setAttribute("isbn", book.getIsbn());
+        Element title = document.createElement("title");
+        Element datePublished = document.createElement("datePublished");
+        Element publisherId = document.createElement("publisherId");
+        Element cost = document.createElement("cost");
+        Element retail = document.createElement("retail");
+        Element discount = document.createElement("discount");
+        Element category = document.createElement("category");
+
+        title.appendChild(document.createTextNode(book.getTitle()));
+        datePublished.appendChild(document.createTextNode(book.getDatePublished()));
+        publisherId.appendChild(document.createTextNode(book.getPublisher().getId()));
+        cost.appendChild(document.createTextNode(book.getCost()));
+        retail.appendChild(document.createTextNode(book.getRetail()));
+        discount.appendChild(document.createTextNode(book.getDiscount()));
+        category.appendChild(document.createTextNode(book.getCategory()));
+
+        element.appendChild(title);
+        element.appendChild(datePublished);
+        element.appendChild(publisherId);
+        element.appendChild(cost);
+        element.appendChild(retail);
+        element.appendChild(discount);
+        element.appendChild(category);
+
+        addBookAuthor(book);
+
+        books.item(books.getLength() - 1).appendChild(element);
+        try {
+            transformer.transform(source, result);
+        } catch (TransformerException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Appends a new BookAuthor node to the LibraryData.xml file.
+     * @param book
+     */
+    private void addBookAuthor(Book book){
+        NodeList bookAuthors = document.getElementsByTagName("bookAuthors");
+
+        for (Author author: book.getAuthors()) {
+            Element element = document.createElement("bookAuthor");
+            element.setAttribute("id", author.getId());
+            element.setAttribute("isbn", book.getIsbn());
+            bookAuthors.item(bookAuthors.getLength() - 1).appendChild(element);
+        }
     }
 }
