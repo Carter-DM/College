@@ -43,7 +43,6 @@ public class LibraryFactory {
             transformerFactory = TransformerFactory.newInstance();
             transformer = transformerFactory.newTransformer();
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-            transformer.setOutputProperty(OutputKeys.METHOD, "xml");
             transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
             result = new StreamResult(pathname);
 
@@ -95,7 +94,7 @@ public class LibraryFactory {
     }
 
     /**
-     * Parses XML and adds Author objects to authors list
+     * Parses XML and adds Author objects to authors list. Initializes author with empty books list.
      */
     private void parseAuthor() {
         NodeList nodeList = document.getElementsByTagName("author");
@@ -109,7 +108,8 @@ public class LibraryFactory {
                 authors.add(new Author(
                         element.getAttribute("id"),
                         element.getElementsByTagName("lastName").item(0).getTextContent(),
-                        element.getElementsByTagName("firstName").item(0).getTextContent()
+                        element.getElementsByTagName("firstName").item(0).getTextContent(),
+                        new ArrayList<>()
                 ));
             }
         }
@@ -179,6 +179,25 @@ public class LibraryFactory {
         throw new NullPointerException("There is no publisher with the ID you specified.");
     }
 
+    private void updateAuthorBooks() {
+        for (Author author: authors) {
+            List<Book> authorBooks = new ArrayList<>();
+            NodeList bookAuthorNodeList = document.getElementsByTagName("bookAuthor");
+            for (int i = 0; i < bookAuthorNodeList.getLength(); i++) {
+                Node bookAuthorNode = bookAuthorNodeList.item(i);
+                Element bookAuthorElement = (Element) bookAuthorNode;
+                if (bookAuthorElement.getAttribute("id").equalsIgnoreCase(author.getId())) {
+                    for (Book book: books) {
+                        if (bookAuthorElement.getAttribute("isbn").equalsIgnoreCase(book.getIsbn())) {
+                            authorBooks.add(book);
+                        }
+                    }
+                }
+            }
+            author.setBooks(authorBooks);
+        }
+    }
+
     /**
      * Appends a new Publisher node to the LibraryData.xml file
      * @param publisher
@@ -206,6 +225,7 @@ public class LibraryFactory {
         } catch (TransformerException e) {
             e.printStackTrace();
         }
+        parsePublisher();
     }
 
     /**
@@ -232,6 +252,7 @@ public class LibraryFactory {
         } catch (TransformerException e) {
             e.printStackTrace();
         }
+        parseAuthor();
     }
 
     /**
@@ -268,6 +289,7 @@ public class LibraryFactory {
         element.appendChild(category);
 
         addBookAuthor(book);
+        updateAuthorBooks();
 
         books.item(books.getLength() - 1).appendChild(element);
         try {
@@ -275,6 +297,7 @@ public class LibraryFactory {
         } catch (TransformerException e) {
             e.printStackTrace();
         }
+        parseBook();
     }
 
     /**

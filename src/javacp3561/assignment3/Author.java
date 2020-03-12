@@ -1,14 +1,19 @@
 package javacp3561.assignment3;
 
+import java.util.List;
+
 public class Author {
     private String id;
     private String lastName;
     private String firstName;
 
-    public Author(String id, String lastName, String firstName) {
+    private List<Book> books;
+
+    public Author(String id, String lastName, String firstName, List<Book> books) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
+        this.books = books;
     }
 
     public String getId() {
@@ -33,5 +38,13 @@ public class Author {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
     }
 }
